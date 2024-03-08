@@ -1,8 +1,38 @@
+:root{
+    --grey: #707070;
+}
+
 .margin-top{
     margin-top: 3rem;
 }
-
+.margin-top-sm{
+    margin-top: 2rem;
+}
 .text-small{
     font-size: .8rem;
     text-align: center;
+    color: var(--grey);
 }
+
+.tile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-blue{
+    background-color: blue !important;
+    color: white;
+}
+.tile select{
+    margin: 0 !important;
+}
+.gap-4px{
+    gap: 4px;
+}
+select{
+    color: var(--grey) !important;
+}
+
+select, input
