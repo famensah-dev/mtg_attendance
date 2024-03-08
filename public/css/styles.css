@@ -3,7 +3,7 @@
 }
 
 .margin-top{
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 .margin-top-sm{
     margin-top: 2rem;
@@ -35,4 +35,11 @@ select{
     color: var(--grey) !important;
 }
 
-select, input
+/* select::placeholder, input::placeholder{
+    font-size: .8rem;
+} */
+
+table{
+    font-size: .8rem;
+    overflow-x: scroll;
+}
