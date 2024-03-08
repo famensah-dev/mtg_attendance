@@ -29,7 +29,7 @@ class AttendanceController extends Controller
     public function store(Request $request)
     {
         $attendance = Attendance::create($request->all());
-        dd($attendance);
+        return view('welcome');
     }
 
     /**
