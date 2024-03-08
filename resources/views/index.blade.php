@@ -39,7 +39,7 @@
                     </svg>
                 </div>
                 
-                <div class="margin-top">
+                <div class="margin-top table-container">
                     @if(session()->has('message'))
                         <div class="alert alert-success">
                             {{ session()->get('message') }}
