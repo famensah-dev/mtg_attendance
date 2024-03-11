@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,4 @@ Route::get('/', function () {
 });
 
 Route::resource('/attendance', AttendanceController::class);
+Route::get('/search', [SearchController::class, 'index'])->name('search');

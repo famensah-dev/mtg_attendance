@@ -44,7 +44,7 @@
                         <div class="d-flex justify-center">
                                 <div class="max-w-md mx-auto bg-white shadow-md rounded p-6">
                                     @if(session()->has('message'))
-                                        <div class="alert alert-success">
+                                        <div class="alert flash alert-success">
                                             {{ session()->get('message') }}
                                         </div>
                                     @endif
@@ -78,7 +78,7 @@
                                         @php
                                             $days = range(8, 23);
                                         @endphp
-                                            <div class="d-flex gap-2 margin-top text-small">
+                                            <div class="d-flex gap-2 margin-top text-small px-2 py-4 border border-grey-300 rounded">
                                                 @foreach ($days as $day)
                                                 @php
                                                     $suffix = 'th';
@@ -95,11 +95,11 @@
                                                         <label for="day{{ $day }}">
                                                             {{ $day }}{{ $suffix }}
                                                         </label>
-                                                        <input class="form-check-input" type="checkbox" id="day{{ $day }}" name="{{ "d_".$day.$suffix }}" value="{{ $day }}">
+                                                        <input class="form-check-input" type="checkbox" id="day{{ $day }}" onchange="handleCheckboxChange('{{ $day }}', '{{ $suffix }}')" name="{{ "d_".$day.$suffix }}" value="{{ $day }}">
                                                     </div>
                                                     <div>
                                                         <label>Start time</label>
-                                                        <select name={{ "d_".$day.$suffix."_start" }} class="form-select mb-3" aria-label=".form-select-lg example">
+                                                        <select name={{ "d_".$day.$suffix."_start" }} id={{ "d_".$day.$suffix."_start"  }} class="form-select mb-3" aria-label=".form-select-lg example" disabled>
                                                             <option value="">-</option>
                                                             @for ($i = 6; $i < 24; $i++)
                                                                 <option value="{{ $i }}">{{ $i }}:00</option>
@@ -108,7 +108,7 @@
                                                     </div>
                                                 <div>
                                                     <label>End time</label>
-                                                    <select name={{ "d_".$day.$suffix."_end" }} class="form-select mb-3" aria-label=".form-select-lg example">
+                                                    <select name={{ "d_".$day.$suffix."_end" }} id={{ "d_".$day.$suffix."_end"  }} class="form-select mb-3" aria-label=".form-select-lg example" disabled>
                                                         <option value="">-</option>
                                                         @for ($i = 6; $i < 24; $i++)
                                                             <option value="{{ $i }}">{{ $i }}:00</option>
@@ -118,7 +118,7 @@
                                             </div>
                                             @endforeach
                                         </div>
-                                        <div class="flex items-center justify-between margin-top">
+                                        <div class="flex justify-center margin-top">
                                             <button type="submit" class="btn btn-blue">Submit</button>
                                         </div>
                                     </form>
@@ -128,10 +128,6 @@
                 </div>
 
                 <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm sm:text-left">
-                        &nbsp;
-                    </div>
-
                     <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
                         &copy;{{ date('Y') }} More Than Gold. All rights reserved.
                     </div>

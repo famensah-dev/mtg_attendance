@@ -24,12 +24,16 @@
 .btn-blue{
     background-color: blue !important;
     color: white;
+    align-self: center;
 }
 .tile select{
     margin: 0 !important;
 }
 .gap-4px{
     gap: 4px;
+}
+.justify-center{
+    justify-content: center;
 }
 select{
     color: var(--grey) !important;
@@ -43,8 +47,10 @@ table{
     font-size: .8rem;
     overflow-x: scroll;
 }
-
 .table-container{
     width: 100vw;
     overflow-x: scroll;
 }
+
+
+
